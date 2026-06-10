@@ -6,7 +6,7 @@ Map real-world traffic to the theoretical OSI model — not just diagrams.
 
 ## Capture Details
 - **Duration:** 10 minutes
-- **File:** `capt10min.pcapng`
+- **File:** `capt-sample.pcapng`
 - **Tool:** Wireshark
 - **Date:** 2026-06-09
 
