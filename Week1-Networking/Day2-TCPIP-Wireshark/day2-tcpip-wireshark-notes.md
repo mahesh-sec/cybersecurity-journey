@@ -78,19 +78,19 @@ After the TCP handshake, YouTube switched to QUIC for actual video:
 See `/screenshots/` folder.
 
 ### DNS Query — A Record
-![DNS A Record](screenshots/dns_a_record.png)
+![DNS A Record](dns_a_record.png)
 > Filter used: `dns` — showing A record query and response for youtube.com
 
 ### DNS Query — AAAA Record
-![DNS AAAA Record](screenshots/dns_aaaa_record.png)
+![DNS AAAA Record](dns_aaaa_record.png)
 > Filter used: `dns` — showing AAAA record query and response for youtube.com
 
 ### TCP 3-Way Handshake
-![TCP Handshake](screenshots/tcp_handshake.png)
+![TCP Handshake](tcp_handshake.png)
 > Filter used: `tcp.flags.syn==1` — showing SYN, SYN-ACK, ACK sequence
 
 ### QUIC Video Delivery
-![QUIC](screenshots/quic_delivery.png)
+![QUIC](quic_delivery.png)
 > Filter used: `quic` — showing QUIC IETF packets over UDP port 443
 
 ---
