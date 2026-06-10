@@ -90,7 +90,7 @@ See `/screenshots/` folder.
 > Filter used: `tcp.flags.syn==1` — showing SYN, SYN-ACK, ACK sequence
 
 ### QUIC Video Delivery
-![QUIC](quic_delivery.png)
+![QUIC](quic_delivery..png)
 > Filter used: `quic` — showing QUIC IETF packets over UDP port 443
 
 ---
