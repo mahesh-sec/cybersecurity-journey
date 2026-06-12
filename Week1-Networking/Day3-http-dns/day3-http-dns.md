@@ -1,6 +1,6 @@
 # Day 3 — DNS Deep Dive + HTTP/HTTPS + Wireshark Analysis
 
-**Date:** [fill in your date]  
+**Date:** 11-06-2026  
 **Phase:** Foundation (Week 1)  
 **Focus:** DNS resolution, HTTP/HTTPS basics, live packet analysis  
 **PCAP file:** `capthttp.pcapng` — 5,716 packets captured  
