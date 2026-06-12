@@ -32,4 +32,4 @@ Following a 24-week structured roadmap covering:
 Wireshark · Kali Linux · HackTheBox · VirtualBox · Nmap · Burp Suite
 
 ## Connect
-- LinkedIn: [your LinkedIn URL here]
+- LinkedIn: www.linkedin.com/in/patimini-mahesh-89962537b
