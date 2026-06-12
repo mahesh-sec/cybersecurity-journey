@@ -102,7 +102,8 @@ The `http` Wireshark filter returned zero packets. Every connection used HTTPS (
 Every hostname had both an A and AAAA query sent simultaneously — this is modern dual-stack DNS. My machine queried both record types in parallel (e.g. frames 69 and 70 both queried `srtb.msn.com`).
 
 DNS hosts resolved in this capture:
-  github.com, api.github.com, alive.github.com, collector.github.com,
+
+github.com, api.github.com, alive.github.com, collector.github.com,
 
 avatars.githubusercontent.com, user-images.githubusercontent.com,
 
@@ -138,7 +139,7 @@ My machine (192.168.0.103) → "I'm at 2c:3b:70:fa:3b:7d"
 This is normal ARP — the router resolving my MAC address to forward packets. Repeated 8 times throughout the capture (16 packets total: 8 requests, 8 replies).
 
 **Wireshark Filters Used:**
-  dns                          → all DNS traffic
+dns                          → all DNS traffic
 
 dns.flags.response == 0      → queries only
 
