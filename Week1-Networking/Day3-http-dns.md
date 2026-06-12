@@ -114,9 +114,9 @@ ntp.msn.com, img-s-msn-com.akamaized.net, browser.events.data.msn.com,
 
 sb.scorecardresearch.com, r.msftstatic.com, edge.microsoft.com,
 
-functional.events.data.microsoft.com, nav-edge.smartscreen.microsoft.com,
+functional.events.data.microsoft.com, nav-edge.smartscreen.microsoft.com,login.live.com
 
-login.live.com
+
 **Interesting: Tracking Domain Without Visiting It**
 `sb.scorecardresearch.com` appeared in the DNS queries even though I never navigated there directly. The browser resolved it as background telemetry from one of the pages I visited. This is how trackers work — embedded in pages as scripts that your browser silently contacts.
 
