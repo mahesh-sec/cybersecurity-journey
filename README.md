@@ -1,5 +1,4 @@
 # 🛡️ Cybersecurity Journey
-
 Hi, I'm Mahesh — a BTech CSE student at SPSU actively building a career in cybersecurity.
 
 ## Goal
@@ -19,19 +18,18 @@ Following a 24-week structured roadmap covering:
 - Blue Team / SOC Skills
 
 ## Weekly Progress
-
 | Week | Topic | Status |
 |------|-------|--------|
 | Week 1 | Networking Fundamentals · OSI Model · TCP/IP · Wireshark · TLS 1.3 · HTTP/HTTPS · DNS | [✅ Complete](./Week1-Networking/README.md) |
-| Week 2 | Linux & Bash Scripting | 🔜 |
-| Week 3 | Python for Security | 🔜 |
-| Week 4 | OWASP Top 10 | 🔜 |
-| Week 5 | Burp Suite & Web Hacking | 🔜 |
-| Week 6 | CTF Practice (PicoCTF / HackTheBox) | 🔜 |
+| Week 2 | Protocol Attacks (DNS/ARP/DHCP) · TLS 1.2 vs 1.3 · PCAP Analysis · Nmap NSE Scripting · SMB Enumeration · DVWA SQL Injection | [✅ Complete](./week2/README.md) |
+| Week 3 | Linux Fundamentals · File Permissions · OverTheWire Bandit | 🔜 |
+| Week 4 | 🔜 | 🔜 |
+| Week 5 | 🔜 | 🔜 |
+| Week 6 | Phase 1 Completion Checkpoint | 🔜 |
 
 ## Tools Used
-Wireshark · Kali Linux · HackTheBox · VirtualBox · Nmap · Burp Suite
+Wireshark · Kali Linux · HackTheBox · VirtualBox · Nmap · Burp Suite · DVWA · Metasploitable2 · Scapy
 
 ## Connect
-- LinkedIn: www.linkedin.com/in/patimini-mahesh-89962537b
+- LinkedIn: [www.linkedin.com/in/patimini-mahesh-89962537b](https://www.linkedin.com/in/patimini-mahesh-89962537b)
 - GitHub: github.com/mahesh-sec/cybersecurity-journey
