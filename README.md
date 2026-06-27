@@ -21,7 +21,7 @@ Following a 24-week structured roadmap covering:
 | Week | Topic | Status |
 |------|-------|--------|
 | Week 1 | Networking Fundamentals · OSI Model · TCP/IP · Wireshark · TLS 1.3 · HTTP/HTTPS · DNS | [✅ Complete](./Week1-Networking/README.md) |
-| Week 2 | Protocol Attacks (DNS/ARP/DHCP) · TLS 1.2 vs 1.3 · PCAP Analysis · Nmap NSE Scripting · SMB Enumeration · DVWA SQL Injection | [✅ Complete](./week2/README.md) |
+| Week 2 | Protocol Attacks (DNS/ARP/DHCP) · TLS 1.2 vs 1.3 · PCAP Analysis · Nmap NSE Scripting · SMB Enumeration · DVWA SQL Injection | [✅ Complete](./week2/week2_README.md) |
 | Week 3 | Linux Fundamentals · File Permissions · OverTheWire Bandit | 🔜 |
 | Week 4 | 🔜 | 🔜 |
 | Week 5 | 🔜 | 🔜 |
