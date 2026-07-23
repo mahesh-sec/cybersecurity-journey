@@ -1,0 +1,83 @@
+2026-07-08T09:27:47-04:00 kali systemd[1]: Starting ssh.service - OpenBSD Secure Shell server...
+2026-07-08T09:27:47-04:00 kali sshd[181713]: Server listening on 0.0.0.0 port 22.
+2026-07-08T09:27:47-04:00 kali sshd[181713]: Server listening on :: port 22.
+2026-07-08T09:27:47-04:00 kali systemd[1]: Started ssh.service - OpenBSD Secure Shell server.
+2026-07-08T09:31:29-04:00 kali sshd-session[184303]: Invalid user wronguser from ::1 port 46478
+2026-07-08T09:31:36-04:00 kali sshd-session[184303]: pam_unix(sshd:auth): check pass; user unknown
+2026-07-08T09:31:36-04:00 kali sshd-session[184303]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=::1
+2026-07-08T09:31:38-04:00 kali sshd-session[184303]: Failed password for invalid user wronguser from ::1 port 46478 ssh2
+2026-07-08T09:31:42-04:00 kali sshd-session[184303]: pam_unix(sshd:auth): check pass; user unknown
+2026-07-08T09:31:44-04:00 kali sshd-session[184303]: Failed password for invalid user wronguser from ::1 port 46478 ssh2
+2026-07-08T09:31:47-04:00 kali sshd-session[184303]: pam_unix(sshd:auth): check pass; user unknown
+2026-07-08T09:31:50-04:00 kali sshd-session[184303]: Failed password for invalid user wronguser from ::1 port 46478 ssh2
+2026-07-08T09:31:50-04:00 kali sshd-session[184303]: Connection closed by invalid user wronguser ::1 port 46478 [preauth]
+2026-07-08T09:31:50-04:00 kali sshd-session[184303]: PAM 2 more authentication failures; logname= uid=0 euid=0 tty=ssh ruser= rhost=::1
+-- Boot 81c910b9350942ee84592ca2986bb6c8 --
+2026-07-10T06:23:16-04:00 kali systemd[1]: Starting ssh.service - OpenBSD Secure Shell server...
+2026-07-10T06:23:16-04:00 kali sshd[93722]: Server listening on 0.0.0.0 port 22.
+2026-07-10T06:23:16-04:00 kali sshd[93722]: Server listening on :: port 22.
+2026-07-10T06:23:16-04:00 kali systemd[1]: Started ssh.service - OpenBSD Secure Shell server.
+2026-07-10T06:23:34-04:00 kali unix_chkpwd[93886]: password check failed for user (kali)
+2026-07-10T06:23:34-04:00 kali sshd-session[93790]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=127.0.0.1  user=kali
+2026-07-10T06:23:36-04:00 kali sshd-session[93790]: Failed password for kali from 127.0.0.1 port 43086 ssh2
+2026-07-10T06:23:41-04:00 kali sshd-session[93790]: Failed password for kali from 127.0.0.1 port 43086 ssh2
+2026-07-10T06:23:44-04:00 kali sshd-session[93790]: Accepted password for kali from 127.0.0.1 port 43086 ssh2
+2026-07-10T06:23:44-04:00 kali sshd-session[93790]: pam_unix(sshd:session): session opened for user kali(uid=1000) by kali(uid=0)
+-- Boot 85a568858eae49a4b8972d8b8ca9cb4a --
+2026-07-23T06:48:57-04:00 kali systemd[1]: Starting ssh.service - OpenBSD Secure Shell server...
+2026-07-23T06:48:57-04:00 kali sshd[146150]: Server listening on 0.0.0.0 port 22.
+2026-07-23T06:48:57-04:00 kali sshd[146150]: Server listening on :: port 22.
+2026-07-23T06:48:57-04:00 kali systemd[1]: Started ssh.service - OpenBSD Secure Shell server.
+2026-07-23T06:49:00-04:00 kali sshd-session[146196]: Invalid user shiva from 127.0.0.1 port 44440
+2026-07-23T06:49:04-04:00 kali sshd-session[146196]: pam_unix(sshd:auth): check pass; user unknown
+2026-07-23T06:49:04-04:00 kali sshd-session[146196]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=127.0.0.1
+2026-07-23T06:49:06-04:00 kali sshd-session[146196]: Failed password for invalid user shiva from 127.0.0.1 port 44440 ssh2
+2026-07-23T06:49:10-04:00 kali sshd-session[146196]: pam_unix(sshd:auth): check pass; user unknown
+2026-07-23T06:49:12-04:00 kali sshd-session[146196]: Failed password for invalid user shiva from 127.0.0.1 port 44440 ssh2
+2026-07-23T06:49:16-04:00 kali sshd-session[146196]: pam_unix(sshd:auth): check pass; user unknown
+2026-07-23T06:49:18-04:00 kali sshd-session[146196]: Failed password for invalid user shiva from 127.0.0.1 port 44440 ssh2
+2026-07-23T06:49:19-04:00 kali sshd-session[146196]: Connection closed by invalid user shiva 127.0.0.1 port 44440 [preauth]
+2026-07-23T06:49:19-04:00 kali sshd-session[146196]: PAM 2 more authentication failures; logname= uid=0 euid=0 tty=ssh ruser= rhost=127.0.0.1
+2026-07-23T06:49:52-04:00 kali unix_chkpwd[146649]: password check failed for user (testuser1)
+2026-07-23T06:49:52-04:00 kali sshd-session[146591]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=127.0.0.1  user=testuser1
+2026-07-23T06:49:54-04:00 kali sshd-session[146591]: Failed password for testuser1 from 127.0.0.1 port 35590 ssh2
+2026-07-23T06:49:57-04:00 kali unix_chkpwd[146690]: password check failed for user (testuser1)
+2026-07-23T06:49:59-04:00 kali sshd-session[146591]: Failed password for testuser1 from 127.0.0.1 port 35590 ssh2
+2026-07-23T06:50:07-04:00 kali unix_chkpwd[146771]: password check failed for user (testuser1)
+2026-07-23T06:50:10-04:00 kali sshd-session[146591]: Failed password for testuser1 from 127.0.0.1 port 35590 ssh2
+2026-07-23T06:50:10-04:00 kali sshd-session[146591]: Connection closed by authenticating user testuser1 127.0.0.1 port 35590 [preauth]
+2026-07-23T06:50:10-04:00 kali sshd-session[146591]: PAM 2 more authentication failures; logname= uid=0 euid=0 tty=ssh ruser= rhost=127.0.0.1  user=testuser1
+2026-07-23T06:50:59-04:00 kali unix_chkpwd[147221]: password check failed for user (testuser1)
+2026-07-23T06:50:59-04:00 kali sshd-session[147203]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=127.0.0.1  user=testuser1
+2026-07-23T06:51:02-04:00 kali sshd-session[147203]: Failed password for testuser1 from 127.0.0.1 port 37002 ssh2
+2026-07-23T06:51:08-04:00 kali sshd-session[147203]: Accepted password for testuser1 from 127.0.0.1 port 37002 ssh2
+2026-07-23T06:51:09-04:00 kali sshd-session[147203]: pam_unix(sshd:session): session opened for user testuser1(uid=1003) by testuser1(uid=0)
+2026-07-23T10:28:32-04:00 kali unix_chkpwd[256696]: password check failed for user (testuser1)
+2026-07-23T10:28:32-04:00 kali sshd-session[256662]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=127.0.0.1  user=testuser1
+2026-07-23T10:28:34-04:00 kali sshd-session[256662]: Failed password for testuser1 from 127.0.0.1 port 45326 ssh2
+2026-07-23T10:28:36-04:00 kali unix_chkpwd[256729]: password check failed for user (testuser1)
+2026-07-23T10:28:37-04:00 kali sshd-session[256662]: Failed password for testuser1 from 127.0.0.1 port 45326 ssh2
+2026-07-23T10:28:39-04:00 kali unix_chkpwd[256754]: password check failed for user (testuser1)
+2026-07-23T10:28:40-04:00 kali sshd-session[256662]: Failed password for testuser1 from 127.0.0.1 port 45326 ssh2
+2026-07-23T10:28:41-04:00 kali sshd-session[256662]: Connection closed by authenticating user testuser1 127.0.0.1 port 45326 [preauth]
+2026-07-23T10:28:41-04:00 kali sshd-session[256662]: PAM 2 more authentication failures; logname= uid=0 euid=0 tty=ssh ruser= rhost=127.0.0.1  user=testuser1
+2026-07-23T10:29:11-04:00 kali sshd-session[257040]: Invalid user shiva from 127.0.0.1 port 54370
+2026-07-23T10:29:21-04:00 kali sshd-session[257040]: pam_unix(sshd:auth): check pass; user unknown
+2026-07-23T10:29:21-04:00 kali sshd-session[257040]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=127.0.0.1
+2026-07-23T10:29:23-04:00 kali sshd-session[257040]: Failed password for invalid user shiva from 127.0.0.1 port 54370 ssh2
+2026-07-23T10:29:26-04:00 kali sshd-session[257040]: pam_unix(sshd:auth): check pass; user unknown
+2026-07-23T10:29:28-04:00 kali sshd-session[257040]: Failed password for invalid user shiva from 127.0.0.1 port 54370 ssh2
+2026-07-23T10:29:30-04:00 kali sshd-session[257040]: pam_unix(sshd:auth): check pass; user unknown
+2026-07-23T10:29:32-04:00 kali sshd-session[257040]: Failed password for invalid user shiva from 127.0.0.1 port 54370 ssh2
+2026-07-23T10:29:33-04:00 kali sshd-session[257040]: Connection closed by invalid user shiva 127.0.0.1 port 54370 [preauth]
+2026-07-23T10:29:33-04:00 kali sshd-session[257040]: PAM 2 more authentication failures; logname= uid=0 euid=0 tty=ssh ruser= rhost=127.0.0.1
+2026-07-23T10:29:43-04:00 kali unix_chkpwd[257313]: password check failed for user (kali)
+2026-07-23T10:29:43-04:00 kali sshd-session[257287]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=127.0.0.1  user=kali
+2026-07-23T10:29:45-04:00 kali sshd-session[257287]: Failed password for kali from 127.0.0.1 port 47006 ssh2
+2026-07-23T10:29:48-04:00 kali unix_chkpwd[257354]: password check failed for user (kali)
+2026-07-23T10:29:50-04:00 kali sshd-session[257287]: Failed password for kali from 127.0.0.1 port 47006 ssh2
+2026-07-23T10:29:52-04:00 kali unix_chkpwd[257387]: password check failed for user (kali)
+2026-07-23T10:29:53-04:00 kali sshd-session[257287]: Failed password for kali from 127.0.0.1 port 47006 ssh2
+2026-07-23T10:29:54-04:00 kali sshd-session[257287]: Connection closed by authenticating user kali 127.0.0.1 port 47006 [preauth]
+2026-07-23T10:29:54-04:00 kali sshd-session[257287]: PAM 2 more authentication failures; logname= uid=0 euid=0 tty=ssh ruser= rhost=127.0.0.1  user=kali
+
