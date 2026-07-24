@@ -1,0 +1,26 @@
+import socket
+import argparse
+
+parser = argparse.ArgumentParser(description="Pass the arguments for ip, ports and timeout")
+parser.add_argument("-ip", required=True, help="Target IP")
+parser.add_argument("-p", type=int, nargs="+", required=True, help="Ports you want to scan (space-separated)")
+parser.add_argument("-t", "--timeout", type=int, default=3, help="Timeout in seconds")
+args = parser.parse_args()
+
+request = b"HEAD / HTTP/1.0\r\n\r\n"
+
+for port in args.p:
+    sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    sock.settimeout(args.timeout)
+    try:
+        sock.connect((args.ip, port))
+        if port == 80:
+            sock.sendall(request)
+        result = sock.recv(1024)
+    except (TimeoutError, ConnectionRefusedError) as e:
+        print(f"port {port} : no response or closed {e}")
+    else:
+        banner = result.decode(errors="ignore").strip()
+        print(f"The port {port} is open on ip {args.ip} and version of the service running on that port is {banner}")
+    finally:
+        sock.close()
