@@ -33,7 +33,7 @@ OverTheWire Bandit levels solved: **through Level 20+**, each documented with it
 
 ## Sub-Documents
 
-- [`permissions-cheatsheet.md`](./permissions-cheatsheet.md) — permission bits, octal notation, SUID/SGID/sticky bit reference
+- [`permissions-cheatsheet.md`](./day3/permissions-cheatsheet.md) — permission bits, octal notation, SUID/SGID/sticky bit reference
 - [`users-and-auth.md`](./users-and-auth.md) — user/group management, `/etc/passwd`/`/etc/shadow` structure, sudoers configuration
 - [`logging-and-cron.md`](./logging-and-cron.md) — logging systems (`journald`/`rsyslog`) and cron job structure/security implications
 - [`scripts/`](./scripts/) — all three bash scripts with individual usage notes
