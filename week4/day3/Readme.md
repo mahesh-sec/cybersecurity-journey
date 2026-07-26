@@ -1,42 +1,38 @@
-# File Hash Checker
+# File Hash Generator
 
-A Python CLI tool for computing cryptographic hashes of files — either a single file to verify against a known-good checksum, or every file in a directory to generate a hash report. Built as part of Week 4 (Python for Security) of my cybersecurity roadmap.
+## What It Does
+Computes a cryptographic hash for every file in a given directory using Python's `hashlib`, and prints the filename alongside its hex digest. Defaults to SHA-256 but supports any algorithm `hashlib` provides (e.g. `sha1`, `md5`).
 
-## What it does
-
-- Computes the hash (SHA256, MD5, or any algorithm supported by `hashlib`) of every file in a given directory.
-- Skips non-file entries (subdirectories) automatically instead of erroring out.
-- Supports choosing the hash algorithm via a command-line flag, defaulting to SHA256 if none is given.
-- Earlier versions (see `earlier-versions/`) support single-file hash comparison against a known-good stored checksum — useful for file integrity verification.
-
-## Security concept
-
-File hashing is used in security work for two main purposes:
-1. **File integrity verification** — confirming a file hasn't been tampered with or corrupted, by comparing its current hash to a previously recorded "known-good" hash.
-2. **Malware identification** — analysts hash suspicious files and check them against threat intelligence databases (e.g. VirusTotal, NVD) to see if the exact file is already known-malicious.
+## How It Works
+- Lists every entry in the target directory with `os.listdir`.
+- Skips subdirectories — only regular files are hashed (checked via `os.path.isfile`).
+- Uses `hashlib.file_digest`, which streams the file in chunks rather than loading it entirely into memory, so it scales to large files.
 
 ## Usage
-
 ```bash
-python hash3.py --dir /home/kali --alg sha256
-python hash3.py --dir /home/kali          # --alg is optional, defaults to sha256
+python hash_tool.py --dir <directory_path> [--alg <algorithm>]
 ```
 
-## Example output
+| Flag | Description | Default |
+|---|---|---|
+| `--dir` | Directory containing the files to hash (required) | — |
+| `--alg` | Hash algorithm to use | `sha256` |
 
+**Example:**
+```bash
+python hash_tool.py --dir /home/kali/samples --alg sha256
 ```
-The hash of .zshrc is 56ad0fc1f9cb19c6c8f3c1db7e370ba79629b8c08d645350e7697ba5fd58a3ed
-The hash of conf-files.txt is a724587eb6aa5a0b0ff355196433b3b7a83f798b0ab1ddf37333161f9642d66d
-Pictures is not a file
-Downloads is not a file
+
+## Example Output
+```
+The hash of suspicious_binary.exe is e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b85
+The hash of readme.txt is 2c26b46b68ffc68ff99b453c1d30413413422d706483bfa0f98a5e886266e7ae
+notes is not a file
 ```
 
-## Bugs found and fixed along the way
+## Security Concept
+This is a basic **file integrity / forensic hashing** utility. Cryptographic hashes act as unique fingerprints for files: analysts use them to verify a file hasn't been tampered with (comparing against a known-good baseline), to check a suspicious file against threat-intel sources like VirusTotal, or to prove chain-of-custody in digital forensics. Because even a one-byte change produces a completely different hash, this technique underlies malware identification, patch verification, and file integrity monitoring (FIM) tools like Tripwire or OSSEC.
 
-- **Algorithm mismatch**: initially compared an MD5-computed hash against a SHA256 stored checksum. The two will never match since they're different hash types and lengths — the stored checksum and verification algorithm must always agree.
-- **Relative vs. absolute paths**: `os.path.isfile()` was checking a full path built with `os.path.join()`, but `open()` was still using just the bare filename. This only worked by coincidence when the script happened to run from the same directory being scanned. Fixed by using the joined `full_path` consistently in both the check and the `open()` call.
-- **Contradictory argparse setup**: originally had `default="sha256"` alongside `required=True` on the `--alg` argument — since it was required, the default could never actually be used. Removed `required=True` so the default is meaningful and `--alg` becomes a genuinely optional flag.
-
-## Notes on error handling
-
-The algorithm name is validated once, since an invalid algorithm would fail identically for every file in the directory — better to catch that early than print the same error 50 times. Per-file errors (e.g. permission issues on a single file) are handled separately so one bad file doesn't stop the whole directory scan.
+## Possible Improvements
+- Handle an invalid `--alg` value with a clear error instead of letting `hashlib` raise an unhandled exception.
+- Add a `--recursive` flag to hash files in subdirectories too.
