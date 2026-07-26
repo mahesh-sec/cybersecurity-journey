@@ -19,11 +19,11 @@ Following a 24-week structured roadmap covering:
 | Week 1 | Networking Fundamentals · OSI Model · TCP/IP · Wireshark · TLS 1.3 · HTTP/HTTPS · DNS | [✅ Complete](./Week1-Networking/README.md) |
 | Week 2 | Protocol Attacks (DNS/ARP/DHCP) · TLS 1.2 vs 1.3 · PCAP Analysis · Nmap NSE Scripting · SMB Enumeration · DVWA SQL Injection | [✅ Complete](./week2/week2_README.md) |
 | Week 3 | Linux Fundamentals · File Permissions & SUID/GTFOBins · Users/Auth Internals · Bash Scripting · Logging & Cron · Privilege Escalation Enumeration · OverTheWire Bandit (20+) | [✅ Complete](./week3/README.md) |
-| Week 4 | 🔜 | 🔜 |
+| Week 4 | Python for Security (Port Scanner, Hash Tool, Log Parser, Banner Grabber) · SMB Deep Enumeration · OverTheWire Bandit (13–22, continuing to 33) | [✅ Complete](./week4/README.md) |
 | Week 5 | 🔜 | 🔜 |
 | Week 6 | Phase 1 Completion Checkpoint | 🔜 |
 ## Tools Used
 Wireshark · Kali Linux · HackTheBox · VirtualBox · Nmap · Burp Suite · DVWA · Metasploitable2 · Scapy
 ## Connect
-- LinkedIn: [[www.linkedin.com/in/patimini-mahesh-89962537b](https://www.linkedin.com/in/patimini-mahesh-89962537b)](https://www.linkedin.com/in/patimini-mahesh-89962537b](https://www.linkedin.com/in/patimini-mahesh-89962537b))
+- LinkedIn: [linkedin.com/in/patimini-mahesh-89962537b](https://www.linkedin.com/in/patimini-mahesh-89962537b)
 - GitHub: github.com/mahesh-sec/cybersecurity-journey
