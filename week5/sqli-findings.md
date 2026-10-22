@@ -29,19 +29,4 @@ Input is bound as a literal value through a prepared statement, so the
 database never interprets it as part of the query structure — it can only
 ever be data, never code.
 
-## Lab: DVWA — Low security
 
-- [ ] Payload: `'` alone → result:
-- [ ] Payload: `' OR '1'='1` → result:
-- [ ] Payload: `' OR '1'='1' -- ` → result:
-- Notes on why each payload worked against the underlying query:
-
-## Lab: DVWA — Medium security
-
-- What changed in the filtering compared to Low:
-- How I worked around it:
-- Payload(s) used:
-
-## Carried over / follow-up
-- PortSwigger SQLi labs 1–3 (read theory before attempting)
-- UNION attacks theory preview (for Day 3)
