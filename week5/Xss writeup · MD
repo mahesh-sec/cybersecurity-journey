@@ -1,0 +1,83 @@
+# Cross-Site Scripting (XSS) Write-up
+
+**Week 5, Day 4** | Part of `cybersecurity-journey/week5/`
+
+## 1. What is XSS?
+
+XSS is when untrusted input is executed as JavaScript in a victim's browser under a trusted website's origin. The attacker injects JavaScript into a page the victim already trusts, so the script runs with that site's origin and can reach its cookies and session data.
+
+**Typical impact**
+- Stealing cookies and session tokens (note: cookies marked `HttpOnly` cannot be read by JavaScript)
+- Acting as the user: changing settings, sending requests on their behalf
+- Logging keystrokes
+- Showing fake login forms on the trusted page
+
+## 2. Types of XSS
+
+### 2.1 Reflected XSS
+- The attacker crafts a malicious link, with the payload in a URL parameter or form field, and tricks the victim into opening it.
+- The server echoes the payload straight back in the response. Nothing is stored.
+- Depends on social engineering, since the victim has to click the link.
+
+### 2.2 Stored XSS
+- The attacker submits the payload and the server saves it (for example, in the database).
+- Whenever other users request the affected page, the payload is served to them and executes.
+- No crafted link is needed: anyone who visits the page is affected. This is why stored XSS is generally considered more dangerous than reflected.
+
+### 2.3 DOM-based XSS
+- The vulnerability is in client-side JavaScript. Attacker-controlled data flows from a **source** into a dangerous **sink**.
+- Happens entirely in the browser. With payloads in the URL fragment (`#...`), the payload may never reach the server, so server-side logs and filters cannot see it.
+
+| | Examples |
+|---|---|
+| **Sources** (where attacker data enters) | `location.hash`, `location.search`, `document.referrer` |
+| **Sinks** (where it becomes dangerous) | `innerHTML`, `document.write()`, `eval()` |
+
+### 2.4 Comparison
+
+| Type | Where the payload lives | Stored on server? | Victim action needed |
+|---|---|---|---|
+| Reflected | Request (URL/form), echoed in response | No | Click a crafted link |
+| Stored | Server-side storage, served to visitors | Yes | Just visit the page |
+| DOM-based | Client-side source flowing to a sink | No | Usually a crafted link |
+
+## 3. Context matters
+
+A payload that works in plain HTML may fail inside an HTML attribute, a JavaScript string or a URL. Filters are often bypassed by changing the payload to suit its context. *(Fill in with real examples from the Medium-level lab.)*
+
+## 4. DVWA XSS: Low security
+
+### 4.1 Reflected (Low)
+- **Payload used:**
+- **Where it travels in the request:**
+- **Where it appears in the response:**
+- **Result / browser console confirmation:**
+
+### 4.2 Stored (Low)
+- **Payload used:**
+- **Where it is stored and how it is served back:**
+- **Result / browser console confirmation:**
+
+## 5. DVWA XSS: Medium security
+
+*(Carried over to the weekend.)*
+- **How the filter differs from Low:**
+- **Bypass payload and why it works:**
+
+## 6. Labs
+
+*(Add the three labs completed, with the payload that worked and why.)*
+
+| Lab | Payload | Why it worked |
+|---|---|---|
+| 1 | | |
+| 2 | | |
+| 3 | | |
+
+## 7. Defences
+
+*(To be filled in after the High/CSP block: output encoding by context, Content Security Policy, `HttpOnly` cookies.)*
+
+## 8. Key takeaways
+
+-
