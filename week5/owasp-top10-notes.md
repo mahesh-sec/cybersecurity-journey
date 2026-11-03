@@ -1,16 +1,21 @@
-# OWASP Top 10:2025 Notes
+# OWASP Top 10 — Comparison Table
 
-Source: https://top10.owasp.org/2025/
+Edition used: OWASP Top 10:2021 (check owasp.org/Top10 in case a newer edition is current).
+Fill the **Lab evidence** column with a lab you actually performed.
 
-| # | Category | Root Cause | Example Attack | Primary Defense |
-|---|----------|-----------|----------------|-----------------|
-| A01 | Broken Access Control | Server doesn't enforce who can access what | Changing an ID in the URL to view another user's data (IDOR) | Deny by default, check permissions server-side on every request |
-| A02 | Security Misconfiguration | Insecure defaults, unused features, verbose errors | Logging in to an admin panel with default credentials | Hardened baseline config, remove unused features |
-| A03 | Software Supply Chain Failures | Untrusted or compromised dependencies and build tools | Malicious update in a third-party package | Verify dependencies, pin versions, monitor the supply chain |
-| A04 | Cryptographic Failures | Weak or missing encryption of sensitive data | Intercepting data sent over plain HTTP, cracking weak hashes | Strong algorithms, TLS everywhere, proper key management |
-| A05 | Injection | Untrusted input mixed into commands or queries | SQL injection: `1' OR '1'='1` | Parameterized queries, input validation |
-| A06 | Insecure Design | Missing security thinking at design stage | Business logic abuse, e.g. unlimited password reset attempts | Threat modeling, secure design patterns |
-| A07 | Authentication Failures | Weak login, session or credential handling | Credential stuffing, session hijacking | MFA, strong session management, rate limiting |
-| A08 | Software or Data Integrity Failures | Code or data trusted without integrity checks | Tampered update accepted by the app | Digital signatures, integrity verification |
-| A09 | Security Logging and Alerting Failures | Events not logged, no alerts on attacks | Attack goes unnoticed for months | Log security events, set up alerting |
-| A10 | Mishandling of Exceptional Conditions | Errors and edge cases handled badly | Crafted input triggers a crash or leaks internal details | Handle errors safely, fail closed, test edge cases |
+| # | Category | Root cause | Example attack | Primary defense | Lab evidence |
+|---|---|---|---|---|---|
+| A01 | Broken Access Control | Server doesn't enforce who may do what | Change `id=5` to `id=6` to read another user's data (IDOR) | Server-side authorization on every request, deny by default | TODO (auth/IDOR labs) |
+| A02 | Cryptographic Failures | Weak/missing encryption of data in transit or at rest | Sniffing credentials sent over HTTP | TLS everywhere, strong hashing (bcrypt/argon2), no sensitive data in URLs | DVWA login seen in plain text via Burp |
+| A03 | Injection | Untrusted input is interpreted as code/query | `' OR 1=1 --` in a login or search field (SQLi), `<script>` (XSS) | Parameterized queries, input validation, output encoding | TODO (SQLi + XSS labs) |
+| A04 | Insecure Design | Missing security thinking at design time | No rate limit or lockout on login, enabling brute force | Threat modeling, secure design patterns, rate limiting | TODO (Intruder run on login) |
+| A05 | Security Misconfiguration | Insecure defaults, verbose errors, open admin pages | Default credentials, directory listing, stack traces | Hardened baselines, remove defaults, disable debug in production | TODO (misconfig findings) |
+| A06 | Vulnerable & Outdated Components | Using libraries/software with known CVEs | Exploiting a known CVE in an old framework | Inventory dependencies, patch, SCA tools | TODO (or "reviewed only") |
+| A07 | Identification & Authentication Failures | Weak passwords, poor session handling, no MFA | Credential stuffing, session fixation | MFA, strong password policy, secure session management, lockout | TODO (auth/session labs, Intruder) |
+| A08 | Software & Data Integrity Failures | Trusting unverified updates, plugins or serialized data | Insecure deserialization, tampered CI/CD pipeline | Signed artifacts, integrity checks, safe deserialization | TODO (or "reviewed only") |
+| A09 | Security Logging & Monitoring Failures | Attacks go unnoticed | Brute force that never triggers an alert | Centralized logs, alerting, incident response plan | TODO (or "reviewed only") |
+| A10 | Server-Side Request Forgery (SSRF) | Server fetches attacker-supplied URLs | Make the server request `http://localhost/admin` or a cloud metadata URL | Allow-list destinations, block internal ranges, network segmentation | TODO (SSRF lab) |
+
+## Notes
+- Rows marked "reviewed only" are fine if you didn't do a lab. Be honest about that, since interviewers ask.
+- Pick 2–3 rows and be ready to explain them out loud (attack, why it works, fix).
