@@ -58,21 +58,21 @@
 - Site map: https://portswigger.net/burp/documentation/desktop/tools/target/site-map
 
 
-Day 2: Repeater, first pass
+## Day 2: Repeater, first pass
 
-Request used: DVWA login request (POST /login.php)
+**Request used:** DVWA login request (POST /login.php)
 
-Baseline (valid): admin / password -> 302 Found, Location: index.php, new PHPSESSID issued. This confirms a real successful login.
+**Baseline (valid):** admin / password -> 302 Found, Location: index.php, new PHPSESSID issued. This confirms a real successful login.
 
-Invalid attempts (all identical outcome):
+**Invalid attempts (all identical outcome):**
 
-admin / wrongpassword
-wronguser / password
-admin / ' or '1'='1 (payload in password field)
-' or '1'='1 / ' or '1'='1 (payload in both fields)
+- admin / wrongpassword
+- wronguser / password
+- admin / ' or '1'='1 (payload in password field)
+- ' or '1'='1 / ' or '1'='1 (payload in both fields)
 
 All four returned 302 Found, Location: login.php, with no authenticated session created.
 
-Conclusion: The login form requires an exact valid username AND password match. A basic ' or '1'='1 payload does not bypass authentication here, suggesting the login query is not trivially injectable at Low security -- unlike DVWA's dedicated SQL Injection module (a separate page), which is built to be vulnerable. Worth testing that page tomorrow for a true SQLi bypass.
+**Conclusion:** The login form requires an exact valid username AND password match. A basic `' or '1'='1` payload does not bypass authentication here, suggesting the login query is not trivially injectable at Low security -- unlike DVWA's dedicated SQL Injection module (a separate page), which is built to be vulnerable. Worth testing that page tomorrow for a true SQLi bypass.
 
-Note on method: DVWA issues a new PHPSESSID on every page load, regardless of login outcome -- a new session ID alone is NOT proof of success. The reliable signal is the Location header: index.php = success, login.php = failure. Also had to grab a fresh user_token and PHPSESSID for every attempt, since DVWA's CSRF token is tied to the session and a stale one causes every request to fail identically, which can be mistaken for a credential-testing result.
+**Note on method:** DVWA issues a new PHPSESSID on every page load, regardless of login outcome -- a new session ID alone is **not** proof of success. The reliable signal is the `Location` header: `index.php` = success, `login.php` = failure. Also had to grab a fresh `user_token` and `PHPSESSID` for every attempt, since DVWA's CSRF token is tied to the session and a stale one causes every request to fail identically, which can be mistaken for a credential-testing result.
