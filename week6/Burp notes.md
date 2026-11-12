@@ -79,7 +79,7 @@ All four returned 302 Found, Location: login.php, with no authenticated session 
 
 **Note on method:** DVWA issues a new PHPSESSID on every page load, regardless of login outcome -- a new session ID alone is **not** proof of success. The reliable signal is the `Location` header: `index.php` = success, `login.php` = failure. Also had to grab a fresh `user_token` and `PHPSESSID` for every attempt, since DVWA's CSRF token is tied to the session and a stale one causes every request to fail identically, which can be mistaken for a credential-testing result.
 
-# Week 6, Day 3 — Burp Repeater Mastery
+# Day 3 — Burp Repeater Mastery
 
 ## What it is and when I use it
 Repeater lets me resend a single HTTP request as many times as I want,
