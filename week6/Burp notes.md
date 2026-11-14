@@ -190,7 +190,7 @@ one step at a time to see whether the server validates properly.
 - Isolate one variable per test — mixing in a mismatched password while
   testing the Referer header made the Referer result meaningless.
 
-  ## Burp Intruder: Attack Types (Week 6, Day 4)
+## Burp Intruder: Attack Types (Week 6, Day 4)
 
 Intruder automates sending many modified versions of one request. You mark **payload positions** in the request, choose an **attack type**, and load one or more **payload sets**. The attack type decides how payloads are placed into positions.
 
