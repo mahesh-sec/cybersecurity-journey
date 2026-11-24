@@ -3,7 +3,7 @@
 **Course:** Intro to Splunk (eLearning), Splunk Education
 **Replaces:** Splunk Fundamentals 1, module 1 (the Fundamentals courses have been retired)
 **Date:** 24 Nov 2026
-
+**Certificate:** [Intro to Splunk (eLearning)](certificates/splunk-intro-certificate.pdf)
 ---
 
 ## 1. What is Splunk?
