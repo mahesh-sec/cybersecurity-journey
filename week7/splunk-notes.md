@@ -110,3 +110,64 @@ Search results can be turned into dashboard panels using different visualization
 - [ ] Using Fields course (Day 3)
 - [ ] Practice the example search on sample data in a Splunk trial or local install
 - [ ] Confirm exactly what the User role can create and share (check course wording)
+
+# Splunk Fundamentals 1, Module 2 notes (Week 7, Day 3)
+
+## Fields
+- Fields are name=value pairs in events.
+- The fields sidebar shows Selected Fields (host, source, sourcetype) and Interesting Fields.
+- Clicking a field shows its top values and lets you add it to the search.
+
+## Operators
+- `=` and `!=` work on string and numeric fields: `status!=200`
+- `>`, `<`, `>=`, `<=` work on numeric fields only: `bytes>=1000`
+- `AND`, `OR`, `NOT` are Boolean operators and must be uppercase: `status=404 OR status=500`
+
+## fields command
+- Includes (`+`, default) or excludes (`-`) fields from the results.
+- `index=main | fields + host, status`
+- `index=main | fields - source`
+
+## rename
+- Renames a field in the results only.
+- `... | rename src_ip AS "Source IP"` (use quotes if the name has spaces)
+
+## eval
+- Creates a new field from an expression. It exists only during that search and is not saved to the index.
+- `... | eval total_bytes=bytes_in+bytes_out`
+
+## erex
+- Extracts values from example values; no regex needed.
+- Use `fromfield=` to pick the source field; if omitted it defaults to `_raw`.
+- `... | erex user fromfield=_raw examples="alice,bob"`
+
+## rex
+- Extracts values using a regular expression with a named capture group.
+- Use `field=` to pick the source field; the default is `_raw`.
+- `... | rex field=_raw "user=(?<username>\w+)"`
+
+## erex vs rex
+- erex: you give sample values and Splunk builds the regex.
+- rex: you write the regex yourself. More control, more precise.
+
+## Field aliases
+- Give a field an additional name without changing the original. Both names work in searches.
+- Use case: username, employees and user all hold people's names, so alias them to one common field and a single search covers all of them.
+- Applied at search time, not stored in the index.
+- Created in Settings > Fields > Field aliases.
+- Alias vs rename: an alias is a saved setting that keeps the original name; rename only changes the name in one search's results.
+
+## Calculated fields
+- Fields whose values come from an eval expression, saved permanently so you do not retype the eval each search.
+- Example: `total_bytes = bytes_in + bytes_out`
+- Created in Settings > Fields > Calculated fields.
+- eval vs calculated field: eval lasts for one search; a calculated field is saved and appears like any other field.
+
+## Field lookups
+- Add extra fields to events by matching a field against an external table (usually a CSV).
+- Example: events have `status=404`, a lookup table maps status to description, and results gain a `description` field.
+- Steps: upload the lookup file, create a lookup definition, then use it (or set an automatic lookup).
+- In a search: `... | lookup status_lookup status OUTPUT description`
+
+## Doubts (revisit on Day 5)
+-
