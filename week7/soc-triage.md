@@ -45,3 +45,31 @@ SOC stands for Security Operations Center. It is a centralized unit within an or
 - Triage: split the verdict into parts, checked the file behind the alert on VirusTotal, confirmed the network destination was the vendor domain
 - Outcome: false positive, closed as benign (it never became an incident)
 - Full write-up: see `malware-analysis.md`
+
+
+# SOC 101 notes: Event and Incident Management (Week 7, Day 3)
+
+## Event management (before an alert exists)
+1. **Collect** events from EDR, firewalls, IDS/IPS, application logs and other systems.
+2. **Normalize** the data into one consistent schema.
+3. **Analyze and correlate** events across sources to spot activity that could be a security threat. Correlation rules raise the alerts analysts triage.
+
+## Incident management process
+1. **Identification:** detect and confirm that an incident is happening.
+2. **Classification:** rate it by severity and impact.
+3. **Investigation:** work out how it happened by correlating logs and related events.
+4. **Containment:** isolate affected systems so it cannot spread or cause more damage.
+5. **Eradication:** remove the malware or the root cause.
+6. **Recovery:** restore systems to normal operation and verify they are clean.
+7. **Post-incident:** write the full report and record how to prevent the same incident again.
+
+## How an analyst handles an incoming alert
+- Read the alert: what rule fired, on which asset, and why.
+- Decide true positive or false positive by checking the cause and context, not the score alone.
+- Scope it: which hosts, users and destinations are involved, and did anything execute?
+- Escalate or close: escalate confirmed or unclear high-impact alerts, and close false positives with a reason.
+- Document what was checked, the evidence, and the decision.
+
+## Link to today's lab
+- BlueStacks installer: scored 100/100 but was a false positive. The NETSUPPORT alert came from a bundled signed 7-Zip, and the other alerts were normal installer behavior.
+- PXA Stealer task: true positive for the delivery stage (TDS fingerprint check, then a payload download). Nothing executed in the task.
